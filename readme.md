@@ -1,7 +1,6 @@
 ## To test casecade delet update
 
 * Set up the project
-* Use <code>php artisan make:auth</code>
 * Use <code>php artisan migrate</code>, now you are having User and Post models
 * Use <code>php artisan db:seed</code>, that will create posts and associated users
 * Now try deleting any user having posts, it will also delete the posts related to them 
