@@ -3,5 +3,5 @@ namespace App\Service;
 
 interface HelloWorldServiceInterface
 {
-    public function doHelloWorld();
+    public function doHelloWorld($x);
 }

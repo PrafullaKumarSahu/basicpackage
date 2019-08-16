@@ -30,7 +30,8 @@ class HomeController extends Controller
 
     public function doHelloWorld(HelloWorldServiceInterface $helloWorld)
      {
-         $helloWorld->doHelloWorld();
+         $x = 'here';
+         $helloWorld->doHelloWorld($x);
          return new Response();
      }
 }

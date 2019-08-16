@@ -1,0 +1,24 @@
+{
+    "name": "pk/basic",
+    "description": "Basic package for learning",
+    "authors": [
+        {
+            "name": "prafullakumarsahu",
+            "email": "prafullakumarsahu001@gmail.com"
+        }
+    ],
+    "require": {},
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+          "Pk\\": "src/"
+        }
+      },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pk\\Basic\\BasicServiceProvider"
+            ]
+        }
+    }
+}
