@@ -31,7 +31,6 @@ It will ask some questions to create composer.json file for your basic package, 
 Make our package visible
 
 <code>
-
  "repositories": [
     {
         "type": "path",
@@ -49,7 +48,6 @@ Make our package visible
         "pk/basic": "dev-master"
     },
 </code>
-
 
 5. <code>run composer update</code>
 
