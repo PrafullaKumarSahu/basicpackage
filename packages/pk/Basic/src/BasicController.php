@@ -13,7 +13,8 @@ class BasicController extends Controller
      */
     public function index()
     {
-        return 'Hello, I am your basic package.';
+        // return 'Hello, I am your basic package.';
+        return view('pk.basic.index');
     }
 
     /**

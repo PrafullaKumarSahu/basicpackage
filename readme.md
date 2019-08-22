@@ -110,3 +110,15 @@ public function boot()
 </code>
 
 12. Now run <code>php artisan serve</code> and visit <code>127.0.0.1:8000/basic</code>
+
+13. Want to add your view and publish using <code>php artisan vendor:publish</code>?
+Create a view directory inside <code>packages/pk/Basic/src/</code> directory and in <code>BasicServiceProvider</code>'s <code>boot()</code>
+add
+<code>
+    $this->publishes([
+        __DIR__.'/views' => base_path('resources/views/pk/basic'),
+    ]);
+</code>
+
+14. Run <code>php artisan vendor:publish</code>, publish the view and in <code>BasicController</code>'s <code>index()</code>
+<code>return view('pk.basic.index');</code>
