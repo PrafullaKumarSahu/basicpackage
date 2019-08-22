@@ -10,6 +10,7 @@ It will ask some questions to create composer.json file for your basic package, 
 
 
 <code>
+
 {
     "name": "pk/basic",
     "description": "Basic package for learning",
@@ -22,11 +23,14 @@ It will ask some questions to create composer.json file for your basic package, 
     "require": {},
     "minimum-stability": "stable",
 }
+
 </code>
 
 4. In main composer.json (project root folder)
 
 Make our package visible
+
+<code>
 
  "repositories": [
     {
@@ -44,16 +48,20 @@ Make our package visible
         "laravel/tinker": "^1.0",
         "pk/basic": "dev-master"
     },
+</code>
 
-5. run composer update
+
+5. <code>run composer update</code>
 
 6. Creating a service provider
 
-Run artisan command php artisan make:provider BasicServiceProvider, it will generate a BasicServiceProvider.php file in app/providers, let's move this to packages/pk/basic/src directory and then change the namespace at top of the file
+Run artisan command <code>php artisan make:provider BasicServiceProvider</code>, it will generate a <code>BasicServiceProvider.php</code> file in <code>app/providers</code>, let's move this to packages/<code>pk/basic/src</code> directory and then change the namespace at top of the file
 
 7. From Laravel 5.5 there's a great function called auto-discovery, so in package's composer.json
 
 Add
+
+<code>
 
  "autoload": {
         "psr-4": {
@@ -67,31 +75,40 @@ Add
             ]
         }
     }
+</code>
 
-8. Create a controller, suing artisan command php artisan make:controller BasicControlller and move to packages/pk/basic/src directory and change the namespace at top of the file
+8. Create a controller, suing artisan command <code>php artisan make:controller BasicControlller</code> and move to <code>packages/pk/basic/src</code> directory and change the namespace at top of the file
 
-9. In side packages/pk/basic/src create a directory called routes/ and inside that create file web.php 
+9. In side <code>packages/pk/basic/src</code> create a directory called <code>routes/</code> and inside that create file <code>web.php</code> 
 
 Now add a route
 
+<code>
 Route::get('basic', 'Pk\Basic\BasicController@index')->name('basic');
+</code>
 
-10. In BasicController index method 
+10. In <code>BasicController<code/>'s  <code>index()</code> method 
 
+<code>
 return 'Hello, I am your basic package.';
+</code>
 
-11. In BasicServiceProvider register() method
+11. In <code>BasicServiceProvider</code> register() method
 
+<code>
 public function register()
 {
     $this->app->make('Pk\Basic\BasicController');
 }
+</code>
 
-and in boot() method
+and in <code>boot()</code> method
 
+<code>
 public function boot()
 {
     $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 }
+</code>
 
-12. Now run php artisan serve and visit 127.0.0.1:8000/basic
+12. Now run <code>php artisan serve</code> and visit <code>127.0.0.1:8000/basic</code>
