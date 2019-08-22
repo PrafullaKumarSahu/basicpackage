@@ -85,7 +85,7 @@ Now add a route
 Route::get('basic', 'Pk\Basic\BasicController@index')->name('basic');
 </code>
 
-10. In <code>BasicController<code/>'s  <code>index()</code> method 
+10. In <code>BasicController</code>'s  <code>index()</code> method 
 
 <code>
 return 'Hello, I am your basic package.';
